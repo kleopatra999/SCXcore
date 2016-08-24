@@ -320,7 +320,6 @@ ifeq ($(COMBINED_PACKAGES),1)
 	echo Running: ./configure $(OMI_CONFIGURE_QUALS) --outputdirname=output_openssl_0.9.8 --opensslcflags="$(OPENSSL098_CFLAGS)" --openssllibs="$(OPENSSL098_LIBS)" --openssllibdir="$(OPENSSL098_LIBDIR)"; \
 	./configure $(OMI_CONFIGURE_QUALS) --outputdirname=output_openssl_0.9.8 --opensslcflags="$(OPENSSL098_CFLAGS)" --openssllibs="$(OPENSSL098_LIBS)" --openssllibdir="$(OPENSSL098_LIBDIR)"; \
 	$(MAKE) -C $(SCXOMI_DIR) all
-	$(MAKE) -C $(SCXOMI_DIR)/installbuilder OUTPUTDIR="$(SCXOMI_DIR)/output_openssl_0.9.8"
 
 	$(ECHO) "========================= Performing make omi (1.0.0)"
 
@@ -329,13 +328,11 @@ ifeq ($(COMBINED_PACKAGES),1)
 	echo Running: ./configure $(OMI_CONFIGURE_QUALS) --outputdirname=output_openssl_1.0.0 --opensslcflags="$(OPENSSL100_CFLAGS)" --openssllibs="$(OPENSSL100_LIBS)" --openssllibdir="$(OPENSSL100_LIBDIR)"; \
 	./configure $(OMI_CONFIGURE_QUALS) --outputdirname=output_openssl_1.0.0 --opensslcflags="$(OPENSSL100_CFLAGS)" --openssllibs="$(OPENSSL100_LIBS)" --openssllibdir="$(OPENSSL100_LIBDIR)"; \
 	$(MAKE) -C $(SCXOMI_DIR) all
-	$(MAKE) -C $(SCXOMI_DIR)/installbuilder OUTPUTDIR="$(SCXOMI_DIR)/output_openssl_1.0.0"
 
 else
 
 	$(ECHO) "========================= Performing make omi"
 	$(MAKE) -C $(SCXOMI_DIR) all
-	$(MAKE) -C $(SCXOMI_DIR)/installbuilder
 
 endif
 
